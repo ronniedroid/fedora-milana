@@ -1,4 +1,4 @@
-# Starting point
+# fedora-milana
 
 [![build-ublue](https://github.com/ronniedroid/fedora-milana/actions/workflows/build.yml/badge.svg)](https://github.com/ronniedroid/fedora-milana/actions/workflows/build.yml)
 
