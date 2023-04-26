@@ -3,7 +3,7 @@ name: fedora-milana
 # The native container image to build on top of
 # images. 
 # Warning: Non-uBlue images might function unexpectly
-base-container: ghcr.io/ublue-os/base-main
+base-container: quay.io/fedora-ostree-desktops/sericea
 # What fedora version to use. Use an explicit version or `latest`.
 # If you use `latest`, you will be automatically updated
 # to the next major version assuming the image you're using as your base container
@@ -20,14 +20,9 @@ scripts:
 # using rpm-ostree and will be preinstalled in the final image
 rpms:
   - python3-pip # needed for yafti (the first boot installer)
-  - sway
-  - kanshi
   - mako
   - wofi
   - alacritty
-  - waybar
-  - grim
-  - slurp
   - fish
   - distrobox
   - podman

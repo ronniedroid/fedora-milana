@@ -77,8 +77,7 @@ screens:
           default: true
           packages:
             - Share Preview: com.rafaelmardojai.SharePreview
-            - Eyedropper: com.github.finefindus.Eyedropper
-            
+            - Eyedropper: com.github.finefindus.Eyedropper            
   final-screen:
     source: yafti.screen.title
     values:

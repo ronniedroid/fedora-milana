@@ -1,5 +1,5 @@
 ARG FEDORA_MAJOR_VERSION=38
-ARG BASE_CONTAINER_URL=ghcr.io/ublue-os/base-main
+ARG BASE_CONTAINER_URL=quay.io/fedora-ostree-desktops/sericea
 
 FROM ${BASE_CONTAINER_URL}:${FEDORA_MAJOR_VERSION}
 ARG RECIPE
@@ -12,6 +12,7 @@ COPY etc /etc
 RUN mkdir /tmp/scripts
 COPY scripts /tmp/scripts
 RUN find /tmp/scripts -type f -exec chmod +x {} \;
+RUN rpm-ostree override remove firefox firefox-langpacks foot rofi
 
 COPY ${RECIPE} /tmp/ublue-recipe.yml
 
