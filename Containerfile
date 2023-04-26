@@ -12,7 +12,7 @@ COPY etc /etc
 RUN mkdir /tmp/scripts
 COPY scripts /tmp/scripts
 RUN find /tmp/scripts -type f -exec chmod +x {} \;
-RUN rpm-ostree override remove firefox firefox-langpacks foot rofi
+RUN rpm-ostree override remove firefox firefox-langpacks foot rofi &&
 
 COPY ${RECIPE} /tmp/ublue-recipe.yml
 
