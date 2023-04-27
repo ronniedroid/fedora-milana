@@ -12,6 +12,7 @@ ARG RECIPE
 COPY etc /usr/etc
 # uncomment below line if you need to put config files in /usr/
 # COPY usr /usr
+COPY /config/sway/config /etc/sway/
 
 # copy scripts
 RUN mkdir /tmp/scripts
@@ -27,8 +28,6 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # copy and run the build script
 COPY build.sh /tmp/build.sh
 RUN chmod +x /tmp/build.sh && /tmp/build.sh
-
-RUN rpm-ostree override remove firefox firefox-langpacks foot rofi-wayland &&
 
 # clean up and finalize container build
 RUN rm -rf \
