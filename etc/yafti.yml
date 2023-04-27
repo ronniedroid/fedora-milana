@@ -12,7 +12,7 @@ screens:
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Welcome, Traveler
+      title: Welcome
       condition:
         run: flatpak remotes --system | grep fedora
       description: |
@@ -36,11 +36,16 @@ screens:
             - Fedora Media Writer: org.fedoraproject.MediaWriter
             - Mozilla Firefox: org.mozilla.firefox
             - Flatseal Permissions Manager: com.github.tchx84.Flatseal
-            - Extension Manager: com.mattjakeman.ExtensionManager
             - Picture Viewer: org.gnome.eog
+        Office:
+          description: Office and Productivity 
+          default: false
+          packages:
+            - LibreOffice: org.libreoffice.LibreOffice
+            - PDF Arranger: com.github.jeromerobert.pdfarranger
         Gaming:
-          description: Gaming and Wine
-          default: true
+          description: Gaming
+          default: false
           packages:
             - Bottles: com.usebottles.bottles
             - Discord: com.discordapp.Discord
@@ -50,7 +55,7 @@ screens:
             - ProtonPlus: com.vysp3r.ProtonPlus
         Communication:
           description: Communication and chat
-          default: true
+          default: false
           packages:
             - Discord: com.discordapp.Discord
             - Thunderbird Email: org.mozilla.Thunderbird
@@ -58,15 +63,9 @@ screens:
             - Viber: com.viber.Viber
             - Skype: com.skype.Client
             - Telegram Desktop: org.telegram.Telegram 
-        Office:
-          description: Office and Productivity 
-          default: true
-          packages:
-            - LibreOffice: org.libreoffice.LibreOffice
-            - PDF Arranger: com.github.jeromerobert.pdfarranger
         Graphics:
           description: Graphics and Image Manipulation
-          default: true
+          default: false
           packages:
             - Gnu Image Manipulation Program: org.gimp.GIMP
             - Inkscape: org.inkscape.Inkscape
@@ -74,7 +73,7 @@ screens:
             - YOGA Image Optimizer: org.flozz.yoga-image-optimizer
         Development:
           description: Development and Coding
-          default: true
+          default: false
           packages:
             - Share Preview: com.rafaelmardojai.SharePreview
             - Eyedropper: com.github.finefindus.Eyedropper            
@@ -85,10 +84,10 @@ screens:
       icon: "/path/to/icon"
       links:
         - "Install More Applications":
-            run: /usr/bin/gnome-software
+            run: /usr/bin/xdg-open https://flathub.org/
         - "Website":
             run: /usr/bin/xdg-open https://ublue.it
         - "Join the Discord Community":
             run: /usr/bin/xdg-open https://discord.gg/XjG48C7VHx
       description: |
-        Thanks for trying uBlue, we hope you enjoy it!
+        Thanks for trying uBlue (Milana version), we hope you enjoy it!
