@@ -1,9 +1,11 @@
+# Warning: only edit this file inside the images git repository.
+# If you are looking at this file in your root directory on your computer, editing it does nothing.
+
 # The image will be at ghcr.io/yourusername/name
 name: fedora-milana
 # The native container image to build on top of
-# images. 
 # Warning: Non-uBlue images might function unexpectly
-base-container: quay.io/fedora-ostree-desktops/sericea
+base-image: quay.io/fedora-ostree-desktops/sericea
 # What fedora version to use. Use an explicit version or `latest`.
 # If you use `latest`, you will be automatically updated
 # to the next major version assuming the image you're using as your base container
@@ -19,7 +21,10 @@ scripts:
 # These rpms will be installed from the fedora repository
 # using rpm-ostree and will be preinstalled in the final image
 rpms:
-  - python3-pip # needed for yafti (the first boot installer)
+  # needed for yafti (the first boot installer) (remove if you're not using yafti)
+  - python3-pip
+  - libadwaita # libadwaita comes with silverblue, but not with other flavors
+  # add your own below
   - mako
   - wofi
   - alacritty
@@ -27,6 +32,7 @@ rpms:
   - distrobox
   - podman
   - libadwaita
+
 # These Flatpaks (from flathub) will be available for install on boot
 # this is just an example selection.
 # If you leave this empty you can use yafti for post-boot installation
