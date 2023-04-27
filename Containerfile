@@ -17,7 +17,6 @@ COPY etc /usr/etc
 RUN mkdir /tmp/scripts
 COPY scripts /tmp/scripts
 RUN find /tmp/scripts -type f -exec chmod +x {} \;
-# RUN rpm-ostree override remove firefox firefox-langpacks foot rofi &&
 
 COPY ${RECIPE} /usr/etc/ublue-recipe.yml
 
@@ -28,6 +27,8 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # copy and run the build script
 COPY build.sh /tmp/build.sh
 RUN chmod +x /tmp/build.sh && /tmp/build.sh
+
+RUN rpm-ostree override remove firefox firefox-langpacks foot rofi-wayland &&
 
 # clean up and finalize container build
 RUN rm -rf \
