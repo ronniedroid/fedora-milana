@@ -32,6 +32,7 @@ rpms:
   - distrobox
   - podman
   - libadwaita
+  - rcm # for dotfile management
 
 # These Flatpaks (from flathub) will be available for install on boot
 # this is just an example selection.
