@@ -27,11 +27,9 @@ rpms:
   # add your own below
   - mako
   - wofi
-  - alacritty
   - fish
   - distrobox
   - podman
-  - libadwaita
   - rcm # for dotfile management
 
 # These Flatpaks (from flathub) will be available for install on boot

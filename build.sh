@@ -10,7 +10,7 @@ echo "---"
 
 # remove the default firefox (from fedora) in favor of the flatpak,
 # remove rofi and foot to be replaced by wofi and alacritty
-rpm-ostree override remove firefox firefox-langpacks foot rofi
+rpm-ostree override remove firefox firefox-langpacks dunst rofi
 
 echo "-- Installing RPMs defined in recipe.yml --"
 rpm_packages=$(yq '.rpms[]' </usr/etc/ublue-recipe.yml)

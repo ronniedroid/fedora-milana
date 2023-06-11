@@ -32,11 +32,9 @@ screens:
           description: Core Applications
           default: true
           packages:
-            - Document Viewer: org.gnome.Evince
-            - Fedora Media Writer: org.fedoraproject.MediaWriter
+            - Document Viewer: org.kde.okular
             - Mozilla Firefox: org.mozilla.firefox
             - Flatseal Permissions Manager: com.github.tchx84.Flatseal
-            - Picture Viewer: org.gnome.eog
         Office:
           description: Office and Productivity 
           default: false
@@ -48,7 +46,6 @@ screens:
           default: false
           packages:
             - Bottles: com.usebottles.bottles
-            - Discord: com.discordapp.Discord
             - Heroic Games Launcher: com.heroicgameslauncher.hgl
             - Steam: com.valvesoftware.Steam
             - Gamescope for Steam: com.valvesoftware.Steam.Utility.gamescope
