@@ -5,18 +5,9 @@ FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 ARG RECIPE
 
 # copy over configuration files
-# etc is copied to /usr/etc/ to prevent "merge conflicts"
-# as it is the proper directory for "system" configuration files
-# and /etc/ is for editing by the local admin
-# see issue #28 (https://github.com/ublue-os/startingpoint/issues/28)
 COPY etc /usr/etc
-# uncomment below line if you need to put config files in /usr/
 COPY /config/sway/config /etc/sway/
-
-# copy scripts
-RUN mkdir /tmp/scripts
-COPY scripts /tmp/scripts
-RUN find /tmp/scripts -type f -exec chmod +x {} \;
+COPY /config/51-android.rules /etc/udev/rules.d
 
 COPY ${RECIPE} /usr/etc/ublue-recipe.yml
 

@@ -1,38 +1,29 @@
-# Warning: only edit this file inside the images git repository.
-# If you are looking at this file in your root directory on your computer, editing it does nothing.
-
-# The image will be at ghcr.io/yourusername/name
 name: fedora-milana
-# The native container image to build on top of
-# Warning: Non-uBlue images might function unexpectly
 base-image: quay.io/fedora-ostree-desktops/sericea
-# What fedora version to use. Use an explicit version or `latest`.
-# If you use `latest`, you will be automatically updated
-# to the next major version assuming the image you're using as your base container
-# builds with the tag (all uBlue images do this). 
-fedora-version: 38
-# This description will be visible in the container metadata
+fedora-version: 38 # latest can also be used
 description: My own fedora silverblue build with sway - the way I want it
-# These scripts will be executed during the container build
-# Place scripts in scripts/ and put the corresponding filename here
-scripts:
-#  - example.sh
 
 # These rpms will be installed from the fedora repository
 # using rpm-ostree and will be preinstalled in the final image
 rpms:
-  # needed for yafti (the first boot installer) (remove if you're not using yafti)
   - python3-pip
-  - libadwaita # libadwaita comes with silverblue, but not with other flavors
-  # add your own below
+  - libadwaita
   - mako
+  - flatpak
+  - git
   - wofi
   - fish
   - distrobox
   - podman
-  - rcm # for dotfile management
+  - rcm
+  - grim
+  - slurp
+  - udiskie
+  - lxpolkit
+  - emacs
+  - neovim
+  - ark
+  - android-tools
+  - gvfs
+  - gvfs-mtp
 
-# These Flatpaks (from flathub) will be available for install on boot
-# this is just an example selection.
-# If you leave this empty you can use yafti for post-boot installation
-flatpaks:
