@@ -4,7 +4,6 @@ ARG BASE_IMAGE_URL=quay.io/fedora-ostree-desktops/sericea
 FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 
 # copy over configuration files
-COPY etc /usr/etc
 COPY /config/sway/config /etc/sway/
 COPY /config/51-android.rules /etc/udev/rules.d
 ARG RECIPE=./recipe.yml
